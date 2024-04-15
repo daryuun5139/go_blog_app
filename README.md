@@ -1,1 +1,1 @@
-# go_todo_app
+# go_blog_app
