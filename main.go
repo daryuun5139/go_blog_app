@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/daryuun5139/go_todo_app/handlers"
+	"github.com/daryuun5139/go_blog_app/handlers"
 	"github.com/gorilla/mux"
 )
 

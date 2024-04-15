@@ -1,4 +1,4 @@
-module github.com/daryuun5139/go_todo_app
+module github.com/daryuun5139/go_blog_app
 
 go 1.22.2
 
