@@ -6,16 +6,14 @@ import (
 	"os"
 	"os/exec"
 	"testing"
-
-	_ "github.com/go-sql-driver/mysql"
 )
 
 var testDB *sql.DB
 
 var (
-	dbUser     = "docker"
-	dbPassword = "docker"
-	dbDatabase = "sampledb"
+	dbUser     = "daryun"
+	dbPassword = "daryunpass"
+	dbDatabase = "blogdb"
 	dbConn     = fmt.Sprintf("%s:%s@tcp(127.0.0.1:3306)/%s?parseTime=true", dbUser, dbPassword, dbDatabase)
 )
 
@@ -29,7 +27,7 @@ func connectDB() error {
 }
 
 func setupTestData() error {
-	cmd := exec.Command("mysql", "-h", "127.0.0.1", "-u", "docker", "sampledb", "--password=docker", "-e", "source ./testdata/setupDB.sql")
+	cmd := exec.Command("mysql", "-h", "127.0.0.1", "-u", "daryun", "blogdb", "--password=daryunpass", "-e", "source ./testdata/setupDB.sql")
 	err := cmd.Run()
 	if err != nil {
 		return err
@@ -38,7 +36,7 @@ func setupTestData() error {
 }
 
 func cleanupDB() error {
-	cmd := exec.Command("mysql", "-h", "127.0.0.1", "-u", "docker", "sampledb", "--password=docker", "-e", "source ./testdata/cleanupDB.sql")
+	cmd := exec.Command("mysql", "-h", "127.0.0.1", "-u", "daryun", "blogdb", "--password=daryunpass", "-e", "source ./testdata/cleanupDB.sql")
 	err := cmd.Run()
 	if err != nil {
 		return err
